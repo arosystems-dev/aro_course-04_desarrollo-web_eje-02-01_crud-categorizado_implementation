@@ -4,7 +4,7 @@
 
 <h2> EDITAR CATEGORIA</h2>
 <br>
-<form action="?control=CCategoria&accion=update&id=<?php echo $categoria->idCategoria; ?>" method="post" class="formControl">
+<form action="?control=CCategoria&accion=update&id=<?php echo $categoria->id; ?>" method="post" class="formControl">
    <!-- DATOS -->
    <div class="row">
       <div class="col col-lg-8 col-sm-10">
@@ -25,7 +25,7 @@
    </div>
    <br>
    <div class="row jcRight w-lg-8 w-sm-10">
-      <a href="?control=CCategoria&accion=delete&id=<?php echo $categoria->idCategoria; ?>"><button type="button" class="btnControl btnColorDelete">Eliminar</button></a>
+      <a href="?control=CCategoria&accion=delete&id=<?php echo $categoria->id; ?>"><button type="button" class="btnControl btnColorDelete">Eliminar</button></a>
    </div>
 
 </form>

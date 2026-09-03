@@ -8,10 +8,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AROSYSTEMS.DEV CRUD ARTICULOS CATEGORIZADOS" />
     <link rel="icon" href="vista/public/img/icons/logo.ico">
     <link rel="stylesheet" href="vista/public/css/style.css">
     <link rel="stylesheet" href="vista/public/css/styleForm.css">
-    <title>index</title>
+    <title>aro_crud-categorizado</title>
 </head>
 
 <body>

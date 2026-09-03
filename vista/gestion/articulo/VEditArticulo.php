@@ -4,7 +4,7 @@
 
 <h2> EDIT ARTICULO</h2>
 <br>
-<form action="?control=CArticulo&accion=update&id=<?php echo $articulo->idArticulo ?>" method="post" class="formControl" enctype="multipart/form-data">
+<form action="?control=CArticulo&accion=update&id=<?php echo $articulo->id ?>" method="post" class="formControl" enctype="multipart/form-data">
    <!-- DATOS -->
    <div class="row">
       <div class="col col-lg-5 col-sm-10">
@@ -15,10 +15,10 @@
          <select name="cbCategoria" id="cbCategoria" class="cbControl">
             <?php
             foreach ($categorias as $c) {
-               if ($articulo->idCategoria == $c['idCategoria']) {
-                  echo '<option value="' . $c['idCategoria'] . '" selected>' . $c['nombre'] . '</option>';
+               if ($articulo->idCategoria == $c['id']) {
+                  echo '<option value="' . $c['id'] . '" selected>' . $c['nombre'] . '</option>';
                } else {
-                  echo '<option value="' . $c['idCategoria'] . '">' . $c['nombre'] . '</option>';
+                  echo '<option value="' . $c['id'] . '">' . $c['nombre'] . '</option>';
                }
             }
             ?>
@@ -43,7 +43,7 @@
    </div>
    <br>
    <div class="row jcRight w-lg-10 w-sm-10">
-      <a href="?control=CArticulo&accion=destroy&id=<?php echo $articulo->idArticulo; ?>">
+      <a href="?control=CArticulo&accion=destroy&id=<?php echo $articulo->id; ?>">
          <button type="button" class="btnControl btnColorDelete">Eliminar</button>
       </a>
    </div>

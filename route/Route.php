@@ -5,7 +5,7 @@
 
 // CLASES REQUERIDAS
 require_once('control/CPrincipal.php');
-require_once('control/CConsulta.php');
+require_once('control/CReporte.php');
 require_once('control/CCategoria.php');
 require_once('control/CArticulo.php');
 
@@ -21,7 +21,7 @@ $criterio = $_POST['tbBuscar'] ?? '';
 ------------------------------------------*/
 if ($control == 'CPrincipal' && $accion == 'dashboard') {
    $cPrincipal = new CPrincipal();
-   $cPrincipal->generarDashboard();
+   $cPrincipal->showVDashboard();
 }
 
 /*------------------------------------------
@@ -100,6 +100,6 @@ if ($control == 'CArticulo' && $accion == 'destroy' && $id) {
             RUTAS REPORTES
 ------------------------------------------*/
 if ($control == 'CConsulta' && $accion == 'reporte') {
-   $cConsulta = new CConsulta();
-   $cConsulta->generarReporte();
+   $cConsulta = new CReporte();
+   $cConsulta->reporteStock();
 }

@@ -48,7 +48,7 @@
                   '</td>   
                      <td class="textCenter w-lg-2">' . $a['stock'] . '</td>
                      <td class="textCenter w-lg-2">                        
-                        <a href="?control=CArticulo&accion=edit&id=' . $a['idArticulo'] . '">
+                        <a href="?control=CArticulo&accion=edit&id=' . $a['id'] . '">
                            <button class="btnControl btnColorUpdate">Editar</button>
                         </a>                        
                      </td>

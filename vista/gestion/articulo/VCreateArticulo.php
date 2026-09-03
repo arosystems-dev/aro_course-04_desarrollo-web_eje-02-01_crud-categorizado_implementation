@@ -15,7 +15,7 @@
          <select name="cbCategoria" id="cbCategoria" class="cbControl">
             <?php
             foreach ($categorias as $c) {
-               echo '<option value="' . $c['idCategoria'] . '">' . $c['nombre'] . '</option>';
+               echo '<option value="' . $c['id'] . '">' . $c['nombre'] . '</option>';
             }
             ?>
          </select>

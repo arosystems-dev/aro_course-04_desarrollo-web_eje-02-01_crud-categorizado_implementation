@@ -39,12 +39,12 @@
             foreach ($categorias as $c) {
                echo ('
                   <tr>
-                     <td class="w-lg-1 textCenter">' . $c['idCategoria'] . '</td>
+                     <td class="w-lg-1 textCenter">' . $c['id'] . '</td>
                      <td class="w-lg-2">' . $c['nombre'] . '</td>
                      <td class="w-lg-2">' . $c['ubicacion'] . '</td>
                      <td class="w-lg-3">' . $c['descripcion'] . '</td>
                      <td class="w-lg-2 textCenter">                        
-                        <a href="?control=CCategoria&accion=edit&id=' . $c['idCategoria'] . '">
+                        <a href="?control=CCategoria&accion=edit&id=' . $c['id'] . '">
                            <button class="btnControl btnColorUpdate m-1">Editar</button>
                         </a>
                      </td>

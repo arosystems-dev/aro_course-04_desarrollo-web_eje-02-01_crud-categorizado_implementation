@@ -7,7 +7,7 @@
 class CPrincipal
 {
 
-   public function generarDashboard()
+   public function showVDashboard()
    {
       $categorias = MCategoria::all();
       $articulos = MArticulo::all('');

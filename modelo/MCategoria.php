@@ -11,7 +11,7 @@ require_once('modelo/db/ConexionPDO.php');
 class MCategoria
 {
     // ATRIBUTOS
-    public $idCategoria;
+    public $id;
     public $nombre;
     public $descripcion;
     public $ubicacion;
@@ -21,7 +21,7 @@ class MCategoria
     public static function all()
     {
         $conexion = ConexionPDO::openConexion();
-        $consulta = $conexion->prepare('SELECT * FROM categoria WHERE estado=1 ORDER BY idCategoria DESC');
+        $consulta = $conexion->prepare('SELECT * FROM categoria WHERE estado=1 ORDER BY id DESC');
         $consulta->execute();
         $categorias = $consulta->fetchAll();
         return $categorias;
@@ -31,7 +31,7 @@ class MCategoria
     public static function search($criterio)
     {
         $conexion = ConexionPDO::openConexion();
-        $consulta = $conexion->prepare('SELECT * FROM categoria WHERE ((nombre LIKE "%' . $criterio . '%") OR (ubicacion LIKE "%' . $criterio . '%")) AND (estado=1) ORDER BY idCategoria DESC');
+        $consulta = $conexion->prepare('SELECT * FROM categoria WHERE ((nombre LIKE "%' . $criterio . '%") OR (ubicacion LIKE "%' . $criterio . '%")) AND (estado=1) ORDER BY id DESC');
         $consulta->execute();
         $categorias = $consulta->fetchAll();
         return $categorias;
@@ -41,12 +41,12 @@ class MCategoria
     public static function find($id)
     {
         $conexion = ConexionPDO::openConexion();
-        $consulta = $conexion->prepare('SELECT * FROM categoria WHERE estado=1 AND idCategoria = ?');
+        $consulta = $conexion->prepare('SELECT * FROM categoria WHERE estado=1 AND id = ?');
         $consulta->execute(array($id));
         $fila = $consulta->fetch();
         // SE CREA EL OBJETO
         $categoria = new MCategoria();
-        $categoria->idCategoria = $fila['idCategoria'];
+        $categoria->id = $fila['id'];
         $categoria->nombre = $fila['nombre'];
         $categoria->descripcion = $fila['descripcion'];
         $categoria->ubicacion = $fila['ubicacion'];
@@ -68,7 +68,7 @@ class MCategoria
     public function update($id)
     {
         $conexion = ConexionPDO::openConexion();
-        $consulta = $conexion->prepare('UPDATE categoria SET nombre = ?, descripcion = ?, ubicacion = ?, estado = ? WHERE idCategoria = ?');
+        $consulta = $conexion->prepare('UPDATE categoria SET nombre = ?, descripcion = ?, ubicacion = ?, estado = ? WHERE id = ?');
         $consulta->execute(array($this->nombre, $this->descripcion, $this->ubicacion, $this->estado, $id));
     }
 
@@ -76,7 +76,7 @@ class MCategoria
     public function delete($id)
     {
         $conexion = ConexionPDO::openConexion();
-        $consulta = $conexion->prepare('UPDATE categoria SET estado = ? WHERE idCategoria = ?');
+        $consulta = $conexion->prepare('UPDATE categoria SET estado = ? WHERE id = ?');
         $consulta->execute(array($this->estado, $id));
     }
 }
